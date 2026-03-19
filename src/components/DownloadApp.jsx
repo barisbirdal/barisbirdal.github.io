@@ -40,16 +40,16 @@ const DownloadApp = () => {
 
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }} className="download-buttons">
             
-            <a href="https://mobile.letssell.app/Account/Login?ReturnUrl=%2F" target="_blank" rel="noreferrer" style={{ display: 'block' }}>
-              <img src="/btn2.png" alt="Progressive Web App" style={{ height: '55px', objectFit: 'contain', mixBlendMode: 'multiply' }} className="app-btn" onError={(e) => e.target.style.display='none'} />
-            </a>
-            
             <a href="https://apps.apple.com/tr/app/letssellapp/id6746368683?l=tr" target="_blank" rel="noreferrer" style={{ display: 'block' }}>
               <img src="/btn3.png" alt="Download on the App Store" style={{ height: '55px', objectFit: 'contain', mixBlendMode: 'multiply' }} className="app-btn" onError={(e) => e.target.style.display='none'} />
             </a>
             
             <a href="https://play.google.com/store/apps/details?id=com.app.lsa" target="_blank" rel="noreferrer" style={{ display: 'block' }}>
               <img src="/btn1.png" alt="GET IT ON Google Play" style={{ height: '55px', objectFit: 'contain', mixBlendMode: 'multiply' }} className="app-btn" onError={(e) => e.target.style.display='none'} />
+            </a>
+            
+            <a href="https://mobile.letssell.app/Account/Login?ReturnUrl=%2F" target="_blank" rel="noreferrer" style={{ display: 'block' }}>
+              <img src="/btn2.png" alt="Progressive Web App" style={{ height: '55px', objectFit: 'contain', mixBlendMode: 'multiply' }} className="app-btn" onError={(e) => e.target.style.display='none'} />
             </a>
             
           </div>

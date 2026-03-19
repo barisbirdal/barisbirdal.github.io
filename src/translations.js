@@ -52,7 +52,8 @@ export const translations = {
       b2c: "B2C (Perakende satış)",
       field: "Saha satış ekipleri",
       call: "Çağrı merkezi satış ekipleri",
-      promo: "Tanıtım ekipleri"
+      promo: "Tanıtım ekipleri",
+      contactCta: "Sektörünüzde ve şirketinizde LetsSellApp’in nasıl çalışacağını görmek için bizimle iletişime geçin."
     },
     managerInsights: {
       sub: "Yöneticiler Ne Görür?",
@@ -143,7 +144,8 @@ export const translations = {
       b2c: "B2C (Retail sales)",
       field: "Field sales teams",
       call: "Call center sales teams",
-      promo: "Promoter teams"
+      promo: "Promoter teams",
+      contactCta: "Contact us to see how LetsSellApp works in your sector and company."
     },
     managerInsights: {
       sub: "What Managers See",

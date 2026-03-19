@@ -17,7 +17,7 @@ const ManagerInsights = () => {
   return (
     <section id="insights" className="manager-insights-section" style={{ 
       padding: '8rem 0', 
-      background: 'linear-gradient(rgba(248, 249, 252, 0.90), rgba(255, 255, 255, 0.90)), url("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80")',
+      background: 'linear-gradient(rgba(248, 249, 252, 0.90), rgba(255, 255, 255, 0.90)), url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1920&q=80")',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed',
@@ -37,8 +37,8 @@ const ManagerInsights = () => {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1.5rem' }}>
             {insights.map((item, idx) => (
-              <div key={idx} className="card-hover insight-card" style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start', padding: '1.25rem', backgroundColor: 'var(--color-white)', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.03)' }}>
-                <div style={{ padding: '0.85rem', backgroundColor: 'rgba(39, 66, 146, 0.04)', borderRadius: '10px' }}>
+              <div key={idx} className="card-hover insight-card" style={{ display: 'flex', gap: '1.25rem', alignItems: 'center', padding: '1.25rem', backgroundColor: 'var(--color-white)', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.03)' }}>
+                <div style={{ padding: '0.85rem', backgroundColor: 'rgba(39, 66, 146, 0.04)', borderRadius: '10px', flexShrink: 0 }}>
                   {item.icon}
                 </div>
                 <div>
@@ -75,7 +75,7 @@ const ManagerInsights = () => {
 
             <div style={{ marginBottom: '3rem' }} className="dashboard-chart-area">
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
-                <h4 style={{ color: 'var(--color-gray)', fontWeight: 500 }}>{language === 'tr' ? 'Genel Süreç Uyumu' : 'General Process Compliance'}</h4>
+                <h4 style={{ color: 'var(--color-gray)', fontWeight: 500 }}>{language === 'tr' ? 'Satış Süreci Uyumu' : 'Sales Process Compliance'}</h4>
                 <span style={{ color: 'var(--color-navy)', fontWeight: 700 }}>82/100</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: '0.75rem', height: '140px' }} className="bar-chart">

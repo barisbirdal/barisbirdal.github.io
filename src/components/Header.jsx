@@ -32,9 +32,9 @@ const Header = () => {
         {/* Logo */}
         <Link to="/" onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); closeMenu(); }} style={{ flexShrink: 0, display: 'flex', alignItems: 'center', zIndex: 1001 }}>
           <img
-            src="/letssellapp-logo.png"
+            src="/letssellapp-logo-header.png"
             alt="LetsSellApp"
-            style={{ height: '35px', objectFit: 'contain' }}
+            style={{ height: '45px', objectFit: 'contain' }}
             onError={(e) => {
               e.target.style.display = 'none';
               e.target.nextSibling.style.display = 'block';
@@ -83,42 +83,42 @@ const Header = () => {
           alignItems: 'center',
           zIndex: 1000
         }} className="desktop-flex-row">
-          <a href="/#how-it-works" onClick={closeMenu} className="nav-link" style={{ fontWeight: 600, fontSize: '1.1rem' }}>{t('howItWorks')}</a>
-          <a href="/#insights" onClick={closeMenu} className="nav-link" style={{ fontWeight: 600, fontSize: '1.1rem' }}>{t('insights')}</a>
-          <a href="/#use-cases" onClick={closeMenu} className="nav-link" style={{ fontWeight: 600, fontSize: '1.1rem' }}>{t('useCases')}</a>
-          <a href="/#download" onClick={closeMenu} className="nav-link" style={{ fontWeight: 600, fontSize: '1.1rem' }}>{t('download')}</a>
+          <a href="/#how-it-works" onClick={closeMenu} className="nav-link" style={{ fontWeight: 700, fontSize: '0.95rem' }}>{t('howItWorks')}</a>
+          <a href="/#insights" onClick={closeMenu} className="nav-link" style={{ fontWeight: 700, fontSize: '0.95rem' }}>{t('insights')}</a>
+          <a href="/#use-cases" onClick={closeMenu} className="nav-link" style={{ fontWeight: 700, fontSize: '0.95rem' }}>{t('useCases')}</a>
+          <a href="/#download" onClick={closeMenu} className="nav-link" style={{ fontWeight: 700, fontSize: '0.95rem' }}>{t('download')}</a>
           
-          {/* Mobile-only menu additions */}
           <div className="mobile-show" style={{ display: 'none', width: '100%', height: '1px', backgroundColor: 'var(--color-gray-light)', margin: '1rem 0' }}></div>
           <Link to="/contact" onClick={closeMenu} className="mobile-show btn btn-primary" style={{ display: 'none', width: '100%', textDecoration: 'none' }}>{t('demo')}</Link>
-          <a href="https://dash.letssell.app/login" className="mobile-show" style={{ display: 'none', fontWeight: 600, color: 'var(--color-navy)' }}>{t('login')}</a>
+          <a href="https://dash.letssell.app/login" className="mobile-show nav-link" style={{ display: 'none', fontWeight: 700, color: 'var(--color-navy)' }}>{t('login')}</a>
         </nav>
 
-        {/* Right Actions & Language (Desktop Only) */}
-        <div className="mobile-hide" style={{ display: 'flex', justifyContent: 'flex-end', gap: '1.25rem', alignItems: 'center' }}>
-          <Link to="/contact" className="btn btn-primary btn-hover-grow" style={{ textDecoration: 'none', minWidth: '150px', display: 'flex', justifyContent: 'center' }}>{t('demo')}</Link>
+        {/* Right Actions (Desktop Only) */}
+        <div className="mobile-hide header-actions" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginLeft: 'auto' }}>
+          <Link to="/contact" className="btn btn-primary btn-hover-grow" style={{ 
+            textDecoration: 'none', 
+            borderRadius: '8px',
+            padding: '0.6rem 1.75rem',
+            fontSize: '0.95rem',
+            fontWeight: 700
+          }}>
+            {t('demo')}
+          </Link>
           
-          <button
-            onClick={toggleLanguage}
-            style={{
-              display: 'flex', alignItems: 'center', gap: '4px',
-              background: 'transparent', border: '1px solid rgba(39, 66, 146, 0.15)',
-              borderRadius: '20px', padding: '6px 12px', cursor: 'pointer',
-              fontWeight: 700, color: 'var(--color-navy)', fontSize: '0.85rem'
-            }}
-            className="btn-hover-grow"
-          >
-            <span style={{ opacity: language === 'tr' ? 1 : 0.4 }}>TR</span>
-            <span style={{ opacity: language === 'en' ? 1 : 0.4 }}>EN</span>
-          </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.8rem', fontWeight: 700, color: 'var(--color-navy)', cursor: 'pointer' }} onClick={toggleLanguage}>
+            <span style={{ color: language === 'tr' ? 'var(--color-navy)' : 'var(--color-gray-light)', opacity: language === 'tr' ? 1 : 0.6 }}>TR</span>
+            <span style={{ color: 'var(--color-gray-light)', fontWeight: 400 }}>|</span>
+            <span style={{ color: language === 'en' ? 'var(--color-navy)' : 'var(--color-gray-light)', opacity: language === 'en' ? 1 : 0.6 }}>EN</span>
+          </div>
 
-          <a href="https://dash.letssell.app/login" target="_blank" rel="noreferrer" style={{ fontWeight: 600, color: 'var(--color-navy)', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <div style={{ width: '1px', height: '24px', backgroundColor: '#e2e8f0' }}></div>
+
+          <a href="https://dash.letssell.app/login" target="_blank" rel="noreferrer" style={{ fontWeight: 700, color: 'var(--color-navy)', fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '8px' }} className="nav-link">
             {t('login')}
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" /><polyline points="10 17 15 12 10 7" /><line x1="15" y1="12" x2="3" y2="12" /></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" /><polyline points="10 17 15 12 10 7" /><line x1="15" y1="12" x2="3" y2="12" /></svg>
           </a>
         </div>
 
-        {/* Media Query Helpers in JSX (since we can't easily use external classes for all logic here) */}
         <style dangerouslySetInnerHTML={{ __html: `
           @media (min-width: 769px) {
             .desktop-flex-row { 
@@ -129,14 +129,17 @@ const Header = () => {
               height: auto !important; 
               background: none !important; 
               padding: 0 !important; 
-              gap: 2.5rem !important;
+              gap: 2.25rem !important;
+              margin-left: 3rem !important;
             }
             .mobile-show-flex { display: none !important; }
+            .header-actions { margin-left: 2rem !important; }
           }
           @media (max-width: 768px) {
             .mobile-show-flex { display: flex !important; }
             .mobile-hide { display: none !important; }
             .mobile-show { display: block !important; }
+            .desktop-flex-row { gap: 2rem !important; height: 100vh !important; }
           }
         `}} />
 

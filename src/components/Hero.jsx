@@ -38,13 +38,16 @@ const Hero = () => {
             opacity: 0, 
             animationFillMode: 'forwards'
           }}>
-            {t('title1')} <br/>
             <span style={{ 
-              color: 'transparent',
-              backgroundClip: 'text',
-              backgroundImage: 'linear-gradient(90deg, #f39f1c, #ffc76b)',
-              WebkitBackgroundClip: 'text'
-            }}>{t('title2')}</span>
+              display: 'block', 
+              whiteSpace: 'nowrap',
+              textAlign: 'center',
+              position: 'relative',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: 'max-content'
+            }}>{t('title1')}</span>
+            <span style={{ color: 'var(--color-orange)' }}>{t('title2')}</span>
           </h1>
           
           <p className="animate-fade-in-up hero-subtitle" style={{ 

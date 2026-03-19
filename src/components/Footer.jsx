@@ -17,9 +17,9 @@ const Footer = () => {
           {/* Column 1: Brand & Socials */}
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '200px', maxWidth: '300px' }} className="footer-brand">
             <img 
-              src="/letssellapp-logo.png" 
+              src="/letssellapp-logo-vertical.png" 
               alt="LetsSellApp Logo" 
-              style={{ height: '70px', objectFit: 'contain', marginBottom: '1rem', mixBlendMode: 'multiply' }} 
+              style={{ height: '110px', objectFit: 'contain', marginBottom: '1rem', mixBlendMode: 'multiply' }} 
               className="footer-logo"
               onError={(e) => {
                 e.target.style.display = 'none';
@@ -70,7 +70,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div style={{ textAlign: 'center', margin: '0 2rem', paddingTop: '2.5rem', borderTop: '1px solid #e2e8f0', color: '#0f172a', fontSize: '0.95rem', fontWeight: 600 }} className="footer-bottom">
-          {language === 'tr' ? 'Oluşturan' : 'Created by'} <a href="https://hadisatalim.biz/" target="_blank" rel="noreferrer" style={{ color: '#f39f1c', textDecoration: 'none', fontWeight: 600 }}>Hadisatalim.biz</a> &copy; 2021 - {new Date().getFullYear()}
+          <a href="https://hadisatalim.biz/" target="_blank" rel="noreferrer" style={{ color: '#f39f1c', textDecoration: 'none', fontWeight: 600 }}>Hadisatalim.biz</a> &copy; 2020 - {new Date().getFullYear()}
         </div>
 
         <style dangerouslySetInnerHTML={{ __html: `

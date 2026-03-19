@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Shuffle, Search, BarChart3, TrendingUp, PlayCircle } from 'lucide-react';
+import { MessagesSquare, Search, BarChart3, TrendingUp, PlayCircle, ArrowDown } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { getTranslation } from '../translations';
 
@@ -9,7 +9,7 @@ const HowItWorks = () => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const steps = [
-    { icon: <Shuffle size={24} color="var(--color-orange)" strokeWidth={2.5} />, title: t('s1Title'), desc: t('s1Desc') },
+    { icon: <MessagesSquare size={24} color="var(--color-orange)" strokeWidth={2.5} />, title: t('s1Title'), desc: t('s1Desc') },
     { icon: <Search size={24} color="var(--color-orange)" strokeWidth={2.5} />, title: t('s2Title'), desc: t('s2Desc') },
     { icon: <BarChart3 size={24} color="var(--color-orange)" strokeWidth={2.5} />, title: t('s3Title'), desc: t('s3Desc') },
     { icon: <TrendingUp size={24} color="var(--color-orange)" strokeWidth={2.5} />, title: t('s4Title'), desc: t('s4Desc') }
@@ -86,8 +86,6 @@ const HowItWorks = () => {
 
           {/* Right: Steps Stacked */}
           <div className="steps-container" style={{ position: 'relative', display: 'flex', flexDirection: 'column', gap: '2.5rem', paddingLeft: '1.5rem' }}>
-            <div className="timeline-line" style={{ position: 'absolute', top: '2rem', bottom: '2rem', left: '3.35rem', width: '2px', backgroundColor: 'rgba(243, 159, 28, 0.2)', zIndex: 0 }}></div>
-
             {steps.map((step, idx) => (
               <div key={idx} style={{ 
                 display: 'flex', 
@@ -102,6 +100,28 @@ const HowItWorks = () => {
                 position: 'relative',
                 zIndex: 1
               }} className="card-hover step-card">
+                
+                {/* Arrow pointing to next step */}
+                {idx < steps.length - 1 && (
+                  <div className="mobile-hide" style={{
+                    position: 'absolute',
+                    left: '4rem',
+                    bottom: '-1.8rem',
+                    transform: 'translateX(-50%)',
+                    backgroundColor: 'var(--color-white)',
+                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
+                    borderRadius: '50%',
+                    padding: '4px',
+                    color: 'var(--color-orange)',
+                    zIndex: 3,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    <ArrowDown size={16} strokeWidth={2.5} />
+                  </div>
+                )}
+
                 <div style={{ 
                   width: '64px', height: '64px', borderRadius: '50%', 
                   backgroundColor: 'var(--color-white)', 
