@@ -16,7 +16,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section id="how-it-works" style={{ 
+    <section id="how-it-works" className="how-it-works-section" style={{ 
       padding: '8rem 0', 
       background: 'linear-gradient(rgba(248, 249, 252, 0.90), rgba(255, 255, 255, 0.90)), url("https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=1920&q=80")',
       backgroundSize: 'cover',
@@ -27,14 +27,14 @@ const HowItWorks = () => {
       <div className="container">
         
         <div style={{ textAlign: 'center', marginBottom: '5rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <h2 style={{ fontSize: '2.5rem', color: 'var(--color-navy)', marginTop: '0', marginBottom: '1.25rem', letterSpacing: '-0.5px', fontWeight: 700 }}>{t('title')}</h2>
-          <p style={{ fontSize: '1.2rem', color: 'var(--color-gray)', maxWidth: '650px', margin: '0 auto 2.5rem', lineHeight: 1.6 }}>
+          <h2 style={{ fontSize: '2.5rem', color: 'var(--color-navy)', marginTop: '0', marginBottom: '1.25rem', letterSpacing: '-0.5px', fontWeight: 700 }} className="section-title">{t('title')}</h2>
+          <p style={{ fontSize: '1.2rem', color: 'var(--color-gray)', maxWidth: '650px', margin: '0 auto 2.5rem', lineHeight: 1.6 }} className="section-desc">
             {t('desc')}
           </p>
           <span style={{ color: 'var(--color-orange)', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', fontSize: '1.25rem' }}>{t('sub')}</span>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+        <div className="how-it-works-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'center' }}>
           
           {/* Left: Video Area */}
           <div 
@@ -56,9 +56,7 @@ const HowItWorks = () => {
           >
             {!isPlaying ? (
               <>
-                {/* Dark/Gradient Background to simulate a loaded thumbnail */}
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(39,66,146,0.3) 0%, rgba(40,163,189,0.3) 100%)' }}></div>
-                
                 <div style={{ zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', transition: 'transform 0.2s', padding: '2rem' }}>
                   <div style={{ 
                     width: '72px', height: '72px', 
@@ -87,9 +85,8 @@ const HowItWorks = () => {
           </div>
 
           {/* Right: Steps Stacked */}
-          <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', gap: '2.5rem', paddingLeft: '1.5rem' }}>
-            {/* Timeline Line */}
-            <div style={{ position: 'absolute', top: '2rem', bottom: '2rem', left: '3.35rem', width: '2px', backgroundColor: 'rgba(243, 159, 28, 0.2)', zIndex: 0 }}></div>
+          <div className="steps-container" style={{ position: 'relative', display: 'flex', flexDirection: 'column', gap: '2.5rem', paddingLeft: '1.5rem' }}>
+            <div className="timeline-line" style={{ position: 'absolute', top: '2rem', bottom: '2rem', left: '3.35rem', width: '2px', backgroundColor: 'rgba(243, 159, 28, 0.2)', zIndex: 0 }}></div>
 
             {steps.map((step, idx) => (
               <div key={idx} style={{ 
@@ -104,7 +101,7 @@ const HowItWorks = () => {
                 transition: 'transform 0.3s, box-shadow 0.3s',
                 position: 'relative',
                 zIndex: 1
-              }} className="card-hover">
+              }} className="card-hover step-card">
                 <div style={{ 
                   width: '64px', height: '64px', borderRadius: '50%', 
                   backgroundColor: 'var(--color-white)', 
@@ -124,9 +121,21 @@ const HowItWorks = () => {
               </div>
             ))}
           </div>
-          
         </div>
 
+        <style dangerouslySetInnerHTML={{ __html: `
+          @media (max-width: 768px) {
+            .how-it-works-section { padding: 4rem 0 !important; }
+            .section-title { font-size: 2rem !important; }
+            .section-desc { font-size: 1.1rem !important; margin-bottom: 2rem !important; }
+            .how-it-works-grid { gap: 2.5rem !important; grid-template-columns: 1fr !important; }
+            .steps-container { padding-left: 0 !important; gap: 1.5rem !important; }
+            .timeline-line { display: none !important; }
+            .step-card { padding: 1.25rem !important; gap: 1.25rem !important; }
+            .step-card div:first-child { width: 48px !important; height: 48px !important; }
+            .step-card div:first-child svg { width: 20px !important; height: 20px !important; }
+          }
+        `}} />
       </div>
     </section>
   );

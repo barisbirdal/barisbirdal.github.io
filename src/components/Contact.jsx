@@ -6,10 +6,10 @@ const Contact = () => {
   const { language } = useLanguage();
 
   return (
-    <div style={{ backgroundColor: '#fcfcfc', paddingBottom: '5rem' }}>
+    <div className="contact-page" style={{ backgroundColor: '#fcfcfc', paddingBottom: '5rem' }}>
       
       {/* Hero Banner inside Contact Page */}
-      <div style={{ 
+      <div className="contact-hero" style={{ 
         background: 'linear-gradient(rgba(39, 66, 146, 0.8), rgba(39, 66, 146, 0.8)), url("https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1920&q=80")', 
         backgroundSize: 'cover', 
         backgroundPosition: 'center', 
@@ -20,11 +20,11 @@ const Contact = () => {
         borderBottomRightRadius: '50% 10%',
         marginBottom: '4rem'
       }}>
-        <h1 style={{ fontSize: '4rem', marginBottom: '1.5rem', fontWeight: '700', letterSpacing: '-1px' }}>
+        <h1 style={{ fontSize: '4rem', marginBottom: '1.5rem', fontWeight: '700', letterSpacing: '-1px' }} className="contact-title">
           {language === 'tr' ? 'Satış Yolculuğunuzda' : 'We Are By Your Side'}<br/>
           {language === 'tr' ? 'Yanınızdayız.' : 'On Your Sales Journey.'}
         </h1>
-        <p style={{ fontSize: '1.25rem', maxWidth: '800px', margin: '0 auto', lineHeight: 1.6, opacity: 0.9 }}>
+        <p style={{ fontSize: '1.25rem', maxWidth: '800px', margin: '0 auto', lineHeight: 1.6, opacity: 0.9 }} className="contact-desc">
           {language === 'tr' 
             ? 'Her zaman sizden haber almak isteriz! Size nasıl en iyi şekilde yardımcı olabileceğimizi bize bildirin, ve başarınızı desteklemek için elimizden geleni yapalım.'
             : 'We always love hearing from you! Let us know how we can best assist you, and we will do our best to support your success.'}
@@ -32,7 +32,7 @@ const Contact = () => {
       </div>
 
       {/* Contact Quick Links */}
-      <div className="container" style={{ marginBottom: '5rem' }}>
+      <div className="container contact-links-container" style={{ marginBottom: '5rem' }}>
         <div style={{ 
           display: 'grid', 
           gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
@@ -43,8 +43,8 @@ const Contact = () => {
           borderRadius: '20px',
           boxShadow: '0 10px 40px rgba(0,0,0,0.04)',
           border: '1px solid rgba(0,0,0,0.03)'
-        }}>
-          <div>
+        }} className="contact-links-grid">
+          <div className="contact-link-item">
             <h4 style={{ color: 'var(--color-gray)', fontSize: '0.85rem', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
               {language === 'tr' ? 'BİZE ULAŞIN' : 'CONTACT US'}
             </h4>
@@ -58,7 +58,7 @@ const Contact = () => {
             </a>
           </div>
           
-          <div style={{ borderLeft: '1px solid var(--color-gray-light)', borderRight: '1px solid var(--color-gray-light)' }}>
+          <div style={{ borderLeft: '1px solid var(--color-gray-light)', borderRight: '1px solid var(--color-gray-light)' }} className="contact-link-item middle-col">
             <h4 style={{ color: 'var(--color-gray)', fontSize: '0.85rem', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
               {language === 'tr' ? 'HER ZAMAN ARAYIN' : 'CALL US ANYTIME'}
             </h4>
@@ -67,7 +67,7 @@ const Contact = () => {
             </a>
           </div>
           
-          <div>
+          <div className="contact-link-item">
             <h4 style={{ color: 'var(--color-gray)', fontSize: '0.85rem', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
               {language === 'tr' ? 'BİZE E-POSTA GÖNDERİN' : 'EMAIL US'}
             </h4>
@@ -79,7 +79,7 @@ const Contact = () => {
       </div>
 
       {/* Company Information Table */}
-      <div className="container" style={{ paddingBottom: '4rem' }}>
+      <div className="container contact-info-container" style={{ paddingBottom: '4rem' }}>
         <div style={{ 
           backgroundColor: 'white', 
           border: '1px solid rgba(0,0,0,0.06)', 
@@ -88,38 +88,38 @@ const Contact = () => {
           margin: '0 auto', 
           boxShadow: '0 20px 50px rgba(0,0,0,0.03)',
           overflow: 'hidden'
-        }}>
-          <div style={{ padding: '2.5rem 3rem', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
+        }} className="info-table-card">
+          <div style={{ padding: '2.5rem 3rem', borderBottom: '1px solid rgba(0,0,0,0.06)' }} className="info-header">
             <h3 style={{ fontSize: '1.35rem', color: 'var(--color-navy)', fontWeight: 700, margin: 0 }}>
               {language === 'tr' ? 'Şirket Bilgileri' : 'Company Information'}
             </h3>
           </div>
           
-          <div style={{ padding: '0 3rem' }}>
+          <div style={{ padding: '0 3rem' }} className="info-body">
             
-            <div style={{ padding: '2rem 0', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
+            <div style={{ padding: '2rem 0', borderBottom: '1px solid rgba(0,0,0,0.06)' }} className="info-row">
               <h4 style={{ fontSize: '1rem', color: 'var(--color-navy)', marginBottom: '0.5rem', fontWeight: 600 }}>{language === 'tr' ? 'Şirket Adı' : 'Company Name'}</h4>
               <p style={{ color: 'var(--color-gray)', fontSize: '0.95rem', margin: 0 }}>HADİSATALIM BİZ ELEKTRONİK TİCARET VE PAZARLAMA HİZMETLERİ ANONİM ŞİRKETİ</p>
             </div>
             
-            <div style={{ padding: '2rem 0', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
+            <div style={{ padding: '2rem 0', borderBottom: '1px solid rgba(0,0,0,0.06)' }} className="info-row">
               <h4 style={{ fontSize: '1rem', color: 'var(--color-navy)', marginBottom: '0.5rem', fontWeight: 600 }}>{language === 'tr' ? 'Şirket Adresi' : 'Company Address'}</h4>
               <p style={{ color: 'var(--color-gray)', fontSize: '0.95rem', margin: 0, lineHeight: 1.5 }}>
                 Emniyet Evleri Mahallesi Eski Büyükdere Cad. Sapphire Apt. No:1/1/1b01 Kağıthane / İstanbul / Türkiye, 34415
               </p>
             </div>
             
-            <div style={{ padding: '2rem 0', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
+            <div style={{ padding: '2rem 0', borderBottom: '1px solid rgba(0,0,0,0.06)' }} className="info-row">
               <h4 style={{ fontSize: '1rem', color: 'var(--color-navy)', marginBottom: '0.5rem', fontWeight: 600 }}>{language === 'tr' ? 'Vergi Numarası' : 'Tax Number'} <span style={{ fontWeight: 400, color: 'var(--color-gray)' }}>4541670699</span></h4>
               <h4 style={{ fontSize: '1rem', color: 'var(--color-navy)', margin: 0, fontWeight: 600 }}>{language === 'tr' ? 'Vergi Dairesi' : 'Tax Office'} <span style={{ fontWeight: 400, color: 'var(--color-gray)' }}>Zincirlikuyu VD</span></h4>
             </div>
 
-            <div style={{ padding: '2rem 0', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
+            <div style={{ padding: '2rem 0', borderBottom: '1px solid rgba(0,0,0,0.06)' }} className="info-row">
               <h4 style={{ fontSize: '1rem', color: 'var(--color-navy)', marginBottom: '0.5rem', fontWeight: 600 }}>{language === 'tr' ? 'Mersis Numarası' : 'Mersis Number'}</h4>
               <p style={{ color: 'var(--color-gray)', fontSize: '0.95rem', margin: 0 }}>0454-1670-6990-0001</p>
             </div>
             
-            <div style={{ padding: '2rem 0' }}>
+            <div style={{ padding: '2rem 0' }} className="info-row no-border">
               <h4 style={{ fontSize: '1rem', color: 'var(--color-navy)', marginBottom: '0.75rem', fontWeight: 600 }}>{language === 'tr' ? 'İletişim Bilgileri' : 'Contact Information'}</h4>
               <p style={{ color: 'var(--color-gray)', fontSize: '0.95rem', margin: '0 0 0.25rem 0' }}>Melik Karabıyıkoğlu</p>
               <p style={{ color: 'var(--color-gray)', fontSize: '0.95rem', margin: '0 0 0.25rem 0' }}><a href="mailto:melik@letssell.app" style={{ color: 'var(--color-gray)', textDecoration: 'none' }}>melik@letssell.app</a></p>
@@ -128,6 +128,21 @@ const Contact = () => {
 
           </div>
         </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          @media (max-width: 768px) {
+            .contact-hero { padding: 4rem 1.5rem 3rem !important; margin-bottom: 2rem !important; }
+            .contact-title { font-size: 2rem !important; }
+            .contact-desc { font-size: 1.1rem !important; }
+            .contact-links-grid { padding: 2rem 1.5rem !important; gap: 2rem !important; }
+            .middle-col { border-left: none !important; border-right: none !important; border-top: 1px solid var(--color-gray-light) !important; border-bottom: 1px solid var(--color-gray-light) !important; padding: 2rem 0 !important; }
+            .contact-link-item a { font-size: 1.25rem !important; }
+            .info-table-card { border-radius: 12px !important; }
+            .info-header { padding: 1.5rem !important; }
+            .info-body { padding: 0 1.5rem !important; }
+            .info-row { padding: 1.5rem 0 !important; }
+          }
+        `}} />
       </div>
 
     </div>

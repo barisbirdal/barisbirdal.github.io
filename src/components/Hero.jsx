@@ -28,8 +28,8 @@ const Hero = () => {
         
 
 
-        <div style={{ minHeight: '360px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-          <h1 className="animate-fade-in-up" style={{ 
+        <div style={{ minHeight: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingTop: '2rem' }}>
+          <h1 className="animate-fade-in-up hero-title" style={{ 
             fontSize: '4.5rem', 
             marginBottom: '1.5rem', 
             letterSpacing: '-1.5px',
@@ -47,7 +47,7 @@ const Hero = () => {
             }}>{t('title2')}</span>
           </h1>
           
-          <p className="animate-fade-in-up" style={{ 
+          <p className="animate-fade-in-up hero-subtitle" style={{ 
             fontSize: '1.35rem', 
             marginBottom: '3rem', 
             color: 'var(--color-gray-light)', 
@@ -62,7 +62,7 @@ const Hero = () => {
           </p>
         </div>
         
-        <div className="animate-fade-in-up" style={{ 
+        <div className="animate-fade-in-up hero-actions" style={{ 
           display: 'flex', gap: '1.25rem', justifyContent: 'center', 
           animationDelay: '0.4s', opacity: 0, animationFillMode: 'forwards' 
         }}>
@@ -79,6 +79,15 @@ const Hero = () => {
             {getTranslation(language, 'header', 'howItWorks')}
           </a>
         </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          @media (max-width: 768px) {
+            .hero-title { font-size: 2.75rem !important; letter-spacing: -1px !important; }
+            .hero-subtitle { font-size: 1.1rem !important; margin-bottom: 2rem !important; }
+            .hero-actions { flex-direction: column !important; align-items: stretch !important; gap: 1rem !important; }
+            .hero-actions .btn { width: 100% !important; padding: 1rem !important; }
+          }
+        `}} />
       </div>
     </section>
   );

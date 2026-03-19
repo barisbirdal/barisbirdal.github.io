@@ -16,7 +16,7 @@ const UseCases = () => {
   ];
 
   return (
-    <section id="use-cases" style={{
+    <section id="use-cases" className="use-cases-section" style={{
       padding: '8rem 0',
       background: 'linear-gradient(rgba(15, 23, 42, 0.90), rgba(39, 66, 146, 0.90)), url("https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1920&q=80")',
       backgroundSize: 'cover',
@@ -26,22 +26,22 @@ const UseCases = () => {
     }}>
       <div className="container">
 
-        <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: '5rem' }} className="use-cases-header">
           <span style={{ color: 'var(--color-green)', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '0.85rem' }}>{t('sub')}</span>
-          <h2 style={{ fontSize: '3rem', color: 'var(--color-white)', marginTop: '0.75rem', marginBottom: t('desc') ? '1.5rem' : '0', letterSpacing: '-1px' }}>{t('title')}</h2>
+          <h2 style={{ fontSize: '3rem', color: 'var(--color-white)', marginTop: '0.75rem', marginBottom: t('desc') ? '1.5rem' : '0', letterSpacing: '-1px' }} className="use-cases-title">{t('title')}</h2>
           {t('desc') && (
-            <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.7)', maxWidth: '700px', margin: '0 auto', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.7)', maxWidth: '700px', margin: '0 auto', lineHeight: 1.6 }} className="use-cases-desc">
               {t('desc')}
             </p>
           )}
         </div>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', marginBottom: '4rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', marginBottom: '4rem' }} className="use-cases-grid">
           {cases.map((c, idx) => (
-            <div key={idx} className="card-hover" style={{ flex: '1 1 300px', maxWidth: '350px', backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: '16px', padding: '2.5rem 2rem', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <div key={idx} className="card-hover use-case-card" style={{ flex: '1 1 300px', maxWidth: '350px', backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: '16px', padding: '2.5rem 2rem', border: '1px solid rgba(255,255,255,0.1)' }}>
               <div style={{
                 width: '60px', height: '60px', borderRadius: '12px',
-                backgroundColor: 'rgba(40, 163, 189, 0.2)', // Green tinted
+                backgroundColor: 'rgba(40, 163, 189, 0.2)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 marginBottom: '1.5rem'
               }}>
@@ -51,8 +51,6 @@ const UseCases = () => {
             </div>
           ))}
         </div>
-
-
 
       </div>
     </section>

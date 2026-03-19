@@ -15,7 +15,7 @@ const ManagerInsights = () => {
   ];
 
   return (
-    <section id="insights" style={{ 
+    <section id="insights" className="manager-insights-section" style={{ 
       padding: '8rem 0', 
       background: 'linear-gradient(rgba(248, 249, 252, 0.90), rgba(255, 255, 255, 0.90)), url("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80")',
       backgroundSize: 'cover',
@@ -24,20 +24,20 @@ const ManagerInsights = () => {
       borderTop: '1px solid var(--color-gray-light)', 
       overflow: 'hidden' 
     }}>
-      <div className="container" style={{ display: 'flex', flexWrap: 'wrap', gap: '5rem', alignItems: 'center' }}>
+      <div className="container manager-insights-container" style={{ display: 'flex', flexWrap: 'wrap', gap: '5rem', alignItems: 'center' }}>
         
         {/* Text Content */}
-        <div style={{ flex: '1 1 400px' }}>
+        <div style={{ flex: '1 1 400px' }} className="insights-text">
           <span style={{ color: 'var(--color-orange)', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', fontSize: '0.85rem' }}>{t('sub')}</span>
-          <h2 style={{ fontSize: '3rem', color: 'var(--color-navy)', marginTop: '0.5rem', marginBottom: '1.5rem', letterSpacing: '-1px', lineHeight: 1.1 }}>
+          <h2 style={{ fontSize: '3rem', color: 'var(--color-navy)', marginTop: '0.5rem', marginBottom: '1.5rem', letterSpacing: '-1px', lineHeight: 1.1 }} className="insights-title">
             {t('title')}
           </h2>
-          <p style={{ fontSize: '1.25rem', color: 'var(--color-gray)', marginBottom: '3rem', lineHeight: 1.6 }}>
+          <p style={{ fontSize: '1.25rem', color: 'var(--color-gray)', marginBottom: '3rem', lineHeight: 1.6 }} className="insights-desc">
             {t('desc')}
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1.5rem' }}>
             {insights.map((item, idx) => (
-              <div key={idx} className="card-hover" style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start', padding: '1.25rem', backgroundColor: 'var(--color-white)', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.03)' }}>
+              <div key={idx} className="card-hover insight-card" style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start', padding: '1.25rem', backgroundColor: 'var(--color-white)', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.03)' }}>
                 <div style={{ padding: '0.85rem', backgroundColor: 'rgba(39, 66, 146, 0.04)', borderRadius: '10px' }}>
                   {item.icon}
                 </div>
@@ -50,11 +50,10 @@ const ManagerInsights = () => {
         </div>
 
         {/* Premium Dashboard UI Mockup */}
-        <div style={{ flex: '1 1 450px', position: 'relative' }}>
-          {/* Decorative background blur */}
+        <div style={{ flex: '1 1 450px', position: 'relative' }} className="insights-mockup">
           <div style={{ position: 'absolute', top: '10%', left: '10%', width: '80%', height: '80%', background: 'linear-gradient(45deg, var(--color-green), var(--color-purple))', filter: 'blur(80px)', opacity: 0.15, borderRadius: '50%' }}></div>
           
-          <div className="floating-element" style={{ 
+          <div className="floating-element dashboard-card" style={{ 
             backgroundColor: 'var(--color-white)', 
             borderRadius: '20px', 
             padding: '2.5rem', 
@@ -64,8 +63,7 @@ const ManagerInsights = () => {
             zIndex: 1,
             backdropFilter: 'blur(10px)'
           }}>
-            {/* Top Bar of Dashboard */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2.5rem', paddingBottom: '1rem', borderBottom: '1px solid var(--color-gray-light)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2.5rem', paddingBottom: '1rem', borderBottom: '1px solid var(--color-gray-light)' }} className="dashboard-header">
               <div>
                 <h3 style={{ color: 'var(--color-navy)', fontSize: '1.25rem', fontWeight: 600 }}>{language === 'tr' ? 'Ekip Performansı' : 'Team Performance'}</h3>
                 <p style={{ color: 'var(--color-gray)', fontSize: '0.85rem' }}>{language === 'tr' ? 'Son 30 gün verileri' : 'Last 30 days data'}</p>
@@ -75,12 +73,12 @@ const ManagerInsights = () => {
               </div>
             </div>
 
-            <div style={{ marginBottom: '3rem' }}>
+            <div style={{ marginBottom: '3rem' }} className="dashboard-chart-area">
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
                 <h4 style={{ color: 'var(--color-gray)', fontWeight: 500 }}>{language === 'tr' ? 'Genel Süreç Uyumu' : 'General Process Compliance'}</h4>
                 <span style={{ color: 'var(--color-navy)', fontWeight: 700 }}>82/100</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'flex-end', gap: '0.75rem', height: '140px' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-end', gap: '0.75rem', height: '140px' }} className="bar-chart">
                 {[40, 55, 65, 82].map((height, i) => (
                   <div key={i} style={{ flex: 1, position: 'relative', height: '100%', display: 'flex', alignItems: 'flex-end' }}>
                     <div style={{ 
@@ -93,15 +91,9 @@ const ManagerInsights = () => {
                   </div>
                 ))}
               </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '0.75rem', fontSize: '0.85rem', color: 'var(--color-gray)', fontWeight: 500 }}>
-                <span>{language === 'tr' ? '1. Hafta' : 'Week 1'}</span>
-                <span>{language === 'tr' ? '2. Hafta' : 'Week 2'}</span>
-                <span>{language === 'tr' ? '3. Hafta' : 'Week 3'}</span>
-                <span>{language === 'tr' ? 'Bu Hafta' : 'This Week'}</span>
-              </div>
             </div>
             
-            <div>
+            <div className="dashboard-skills">
               <h4 style={{ color: 'var(--color-gray)', marginBottom: '1.5rem', fontWeight: 500 }}>{language === 'tr' ? 'Temel Beceri Analizi' : 'Core Skill Analysis'}</h4>
               {[
                 { name: language === 'tr' ? 'İtiraz Yönetimi' : 'Objection Handling', score: 85, color: 'var(--color-green)' },
@@ -125,6 +117,20 @@ const ManagerInsights = () => {
           </div>
         </div>
 
+        <style dangerouslySetInnerHTML={{ __html: `
+          @media (max-width: 768px) {
+            .manager-insights-section { padding: 4rem 0 !important; }
+            .manager-insights-container { gap: 3rem !important; }
+            .insights-text { flex: 1 1 100% !important; order: 1; }
+            .insights-title { font-size: 2rem !important; }
+            .insights-desc { font-size: 1.1rem !important; margin-bottom: 2rem !important; }
+            .insights-mockup { flex: 1 1 100% !important; order: 2; overflow: hidden; }
+            .dashboard-card { padding: 1.5rem !important; }
+            .dashboard-header { margin-bottom: 1.5rem !important; }
+            .dashboard-chart-area { margin-bottom: 2rem !important; }
+            .bar-chart { height: 100px !important; }
+          }
+        `}} />
       </div>
     </section>
   );
