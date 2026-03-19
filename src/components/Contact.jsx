@@ -10,7 +10,7 @@ const Contact = () => {
 
       {/* Hero Banner inside Contact Page */}
       <div className="contact-hero" style={{
-        background: 'linear-gradient(rgba(39, 66, 146, 0.8), rgba(39, 66, 146, 0.8)), url("https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1920&q=80")',
+        background: 'linear-gradient(rgba(39, 66, 146, 0.85), rgba(39, 66, 146, 0.85)), url("https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1920&q=80")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         padding: '8rem 2rem 5rem',

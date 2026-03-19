@@ -221,10 +221,17 @@ section {
 @media (max-width: 768px) {
   .mobile-hide { display: none !important; }
   .mobile-show { display: block !important; }
-  .flex-mobile-col { flex-direction: column !important; }
+  .mobile-flex-col { flex-direction: column !important; }
+  .mobile-text-center { text-align: center !important; }
+  .mobile-items-start { align-items: flex-start !important; }
+  .mobile-w-full { width: 100% !important; }
+  .mobile-p-0 { padding: 0 !important; }
+  .mobile-m-0 { margin: 0 !important; }
+  .mobile-gap-4 { gap: 1rem !important; }
   
-  h1 { font-size: 2.5rem !important; }
-  h2 { font-size: 2rem !important; }
-  h3 { font-size: 1.5rem !important; }
+  h1 { font-size: 2.25rem !important; }
+  h2 { font-size: 1.85rem !important; }
+  h3 { font-size: 1.4rem !important; }
+  
+  .container { padding: 0 1.25rem !important; }
 }
-

@@ -18,7 +18,7 @@ const HowItWorks = () => {
   return (
     <section id="how-it-works" className="how-it-works-section" style={{ 
       padding: '8rem 0', 
-      background: 'linear-gradient(rgba(248, 249, 252, 0.90), rgba(255, 255, 255, 0.90)), url("https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=1920&q=80")',
+      background: 'linear-gradient(rgba(248, 249, 252, 0.92), rgba(255, 255, 255, 0.92)), url("https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=1920&q=80")',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed',

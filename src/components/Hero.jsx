@@ -20,9 +20,9 @@ const Hero = () => {
       <img 
         src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80" 
         alt="background" 
-        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.35, zIndex: 0 }} 
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.70, zIndex: 0 }} 
       />
-      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(rgba(15, 23, 42, 0.90), rgba(39, 66, 146, 0.90))', zIndex: 0 }}></div>
+      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(rgba(15, 23, 42, 0.75), rgba(39, 66, 146, 0.75))', zIndex: 0 }}></div>
 
       <div className="container" style={{ textAlign: 'center', maxWidth: '850px', position: 'relative', zIndex: 1 }}>
         
@@ -38,7 +38,7 @@ const Hero = () => {
             opacity: 0, 
             animationFillMode: 'forwards'
           }}>
-            <span style={{ 
+            <span className="hero-title-main" style={{ 
               display: 'block', 
               whiteSpace: 'nowrap',
               textAlign: 'center',
@@ -86,6 +86,12 @@ const Hero = () => {
         <style dangerouslySetInnerHTML={{ __html: `
           @media (max-width: 768px) {
             .hero-title { font-size: 2.75rem !important; letter-spacing: -1px !important; }
+            .hero-title-main { 
+              white-space: normal !important; 
+              width: 100% !important; 
+              left: 0 !important; 
+              transform: none !important; 
+            }
             .hero-subtitle { font-size: 1.1rem !important; margin-bottom: 2rem !important; }
             .hero-actions { flex-direction: column !important; align-items: stretch !important; gap: 1rem !important; }
             .hero-actions .btn { width: 100% !important; padding: 1rem !important; }

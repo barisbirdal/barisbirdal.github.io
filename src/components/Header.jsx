@@ -89,8 +89,18 @@ const Header = () => {
           <a href="/#download" onClick={closeMenu} className="nav-link" style={{ fontWeight: 700, fontSize: '0.95rem' }}>{t('download')}</a>
           
           <div className="mobile-show" style={{ display: 'none', width: '100%', height: '1px', backgroundColor: 'var(--color-gray-light)', margin: '1rem 0' }}></div>
-          <Link to="/contact" onClick={closeMenu} className="mobile-show btn btn-primary" style={{ display: 'none', width: '100%', textDecoration: 'none' }}>{t('demo')}</Link>
-          <a href="https://dash.letssell.app/login" className="mobile-show nav-link" style={{ display: 'none', fontWeight: 700, color: 'var(--color-navy)' }}>{t('login')}</a>
+          
+          {/* Mobile Language Toggle */}
+          <div className="mobile-show" style={{ display: 'none', marginBottom: '1rem' }} onClick={toggleLanguage}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', fontWeight: 700, color: 'var(--color-navy)', cursor: 'pointer' }}>
+              <span style={{ color: language === 'tr' ? 'var(--color-navy)' : 'var(--color-gray-light)', opacity: language === 'tr' ? 1 : 0.6 }}>TR</span>
+              <span style={{ color: 'var(--color-gray-light)', fontWeight: 400 }}>|</span>
+              <span style={{ color: language === 'en' ? 'var(--color-navy)' : 'var(--color-gray-light)', opacity: language === 'en' ? 1 : 0.6 }}>EN</span>
+            </div>
+          </div>
+
+          <Link to="/contact" onClick={closeMenu} className="mobile-show btn btn-primary" style={{ display: 'none', width: '100%', textDecoration: 'none', textAlign: 'center' }}>{t('demo')}</Link>
+          <a href="https://dash.letssell.app/login" className="mobile-show nav-link" style={{ display: 'none', fontWeight: 700, color: 'var(--color-navy)', marginTop: '1rem', fontSize: '1.1rem' }}>{t('login')}</a>
         </nav>
 
         {/* Right Actions (Desktop Only) */}

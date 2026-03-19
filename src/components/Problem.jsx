@@ -10,7 +10,7 @@ const Problem = () => {
   return (
     <section id="problem" className="problem-section" style={{ 
       padding: '8rem 0', 
-      background: 'linear-gradient(rgba(248, 249, 252, 0.82), rgba(248, 249, 252, 0.88)), url("https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=1920&q=80")',
+      background: 'linear-gradient(rgba(248, 249, 252, 0.92), rgba(248, 249, 252, 0.92)), url("https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=1920&q=80")',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed',

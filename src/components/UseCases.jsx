@@ -18,7 +18,7 @@ const UseCases = () => {
   return (
     <section id="use-cases" className="use-cases-section" style={{
       padding: '8rem 0',
-      background: 'linear-gradient(rgba(15, 23, 42, 0.90), rgba(39, 66, 146, 0.90)), url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1920&q=80")',
+      background: 'linear-gradient(rgba(15, 23, 42, 0.85), rgba(39, 66, 146, 0.85)), url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1920&q=80")',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed',

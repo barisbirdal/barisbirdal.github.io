@@ -8,7 +8,7 @@ const DownloadApp = () => {
 
   return (
     <section id="download" className="download-section" style={{ 
-      background: 'linear-gradient(rgba(255, 255, 255, 0.82), rgba(248, 249, 252, 0.88)), url("https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=1920&q=80")', 
+      background: 'linear-gradient(rgba(255, 255, 255, 0.92), rgba(248, 249, 252, 0.92)), url("https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=1920&q=80")', 
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       borderTop: '1px solid #f0f0f0', 
