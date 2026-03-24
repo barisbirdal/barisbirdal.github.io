@@ -33,6 +33,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Fix for Safari Turkish 'İ' rendering */
+html[lang="tr"], html[lang="tr"] body {
+  -webkit-locale: "tr";
+  font-feature-settings: "locl" 1;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600; /* Inter SemiBold */
   line-height: 1.2;

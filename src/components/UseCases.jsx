@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Briefcase, ShoppingBag, Headset, Users, SearchX } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { getTranslation } from '../translations';
@@ -56,7 +57,7 @@ const UseCases = () => {
         <div style={{ 
           marginTop: '6rem', 
           textAlign: 'center',
-          backgroundColor: 'var(--color-white)',
+          backgroundColor: 'rgba(255, 255, 255, 0.92)',
           borderRadius: '24px',
           padding: '4rem 2.5rem',
           maxWidth: '850px',
@@ -67,7 +68,7 @@ const UseCases = () => {
           <h3 style={{ fontSize: '1.8rem', color: 'var(--color-navy)', marginBottom: '2.5rem', fontWeight: 700, lineHeight: 1.4, letterSpacing: '-0.5px' }}>
             {t('contactCta')}
           </h3>
-          <a href="/contact" className="btn btn-primary btn-hover-grow" style={{ 
+          <Link to="/contact" className="btn btn-primary btn-hover-grow" style={{ 
             padding: '1.25rem 3.5rem', 
             fontSize: '1.15rem', 
             boxShadow: '0 10px 25px rgba(243, 159, 28, 0.35)',
@@ -75,8 +76,8 @@ const UseCases = () => {
             zIndex: 1,
             display: 'inline-block'
           }}>
-            {getTranslation(language, 'header', 'demo')}
-          </a>
+            {t('contactBtn')}
+          </Link>
         </div>
 
       </div>

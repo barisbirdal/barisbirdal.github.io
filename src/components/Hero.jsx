@@ -52,11 +52,10 @@ const Hero = () => {
           
           <p className="animate-fade-in-up hero-subtitle" style={{ 
             fontSize: '1.35rem', 
-            marginBottom: '3rem', 
             color: 'var(--color-gray-light)', 
             lineHeight: 1.6,
             maxWidth: '700px',
-            margin: '0 auto',
+            margin: '0 auto 3.5rem',
             animationDelay: '0.3s', 
             opacity: 0, 
             animationFillMode: 'forwards'
@@ -92,7 +91,7 @@ const Hero = () => {
               left: 0 !important; 
               transform: none !important; 
             }
-            .hero-subtitle { font-size: 1.1rem !important; margin-bottom: 2rem !important; }
+            .hero-subtitle { font-size: 1.1rem !important; margin-bottom: 2.5rem !important; }
             .hero-actions { flex-direction: column !important; align-items: stretch !important; gap: 1rem !important; }
             .hero-actions .btn { width: 100% !important; padding: 1rem !important; }
           }

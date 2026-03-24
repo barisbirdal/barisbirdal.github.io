@@ -10,16 +10,16 @@ const Impact = () => {
 
   const trData = [
     { labelLeft: 'Aylık Satış Görüşmesi', valLeft: '200', labelRight: 'Aylık Satış Görüşmesi', valRight: '200' },
-    { labelLeft: 'Mevcut Kapanış Oranı', valLeft: '%28', labelRight: 'Kapanış Oranı', valRight: '%36' },
-    { labelLeft: 'Satış', valLeft: '56', labelRight: 'Satış', valRight: '72' },
+    { labelLeft: 'Satış Kapama Oranı', valLeft: '%28', labelRight: 'Satış Kapama Oranı', valRight: '%36' },
+    { labelLeft: 'Satış Adedi', valLeft: '56', labelRight: 'Satış Adedi', valRight: '72' },
     { labelLeft: 'Ortalama Satış Değeri', valLeft: '5K', labelRight: 'Ortalama Satış Değeri', valRight: '5K' },
     { labelLeft: 'Aylık Gelir', valLeft: '280K', labelRight: 'Aylık Gelir', valRight: '360K' }
   ];
 
   const enData = [
     { labelLeft: 'Monthly Sales Calls', valLeft: '200', labelRight: 'Monthly Sales Calls', valRight: '200' },
-    { labelLeft: 'Current Close Rate', valLeft: '28%', labelRight: 'Close Rate', valRight: '36%' },
-    { labelLeft: 'Sales', valLeft: '56', labelRight: 'Sales', valRight: '72' },
+    { labelLeft: 'Sales Close Rate', valLeft: '28%', labelRight: 'Sales Close Rate', valRight: '36%' },
+    { labelLeft: 'Number of Sales', valLeft: '56', labelRight: 'Number of Sales', valRight: '72' },
     { labelLeft: 'Avg Sale Value', valLeft: '5K', labelRight: 'Avg Sale Value', valRight: '5K' },
     { labelLeft: 'Monthly Revenue', valLeft: '280K', labelRight: 'Monthly Revenue', valRight: '360K' }
   ];
@@ -98,7 +98,7 @@ const Impact = () => {
                     </span>
                   </div>
                   <div className="header-icon-box" style={{ position: 'absolute', right: '-20px', background: 'white', border: '6px solid var(--color-orange)', borderRadius: '50%', width: '100px', height: '100px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 10px 25px rgba(243, 159, 28, 0.3)' }}>
-                    <Lightbulb className="icon-svg" size={42} color="#374151" />
+                    <img src="/ampulyerineikon.png" alt="LetsSellApp Logo" className="icon-svg" style={{ width: '55px', height: '55px', objectFit: 'contain' }} />
                   </div>
                 </div>
               </div>
@@ -112,9 +112,6 @@ const Impact = () => {
             {/* Center Dashed Line */}
             <div className="center-dash mobile-hide" style={{ position: 'absolute', left: '50%', top: '-4rem', bottom: '0', borderLeft: '2px dashed #d1d5db', transform: 'translateX(-50%)', zIndex: 0 }}></div>
             
-            {/* VS Badge */}
-            <div className="vs-badge" style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', background: 'white', padding: '0.4rem 1rem', borderRadius: '12px', fontWeight: 800, color: '#9ca3af', border: '1px solid #e5e7eb', boxShadow: '0 4px 10px rgba(0,0,0,0.05)', zIndex: 2 }}>VS</div>
-
             {/* Connecting dashed lines outside - aligned to circles */}
             <div className="side-dash mobile-hide" style={{ position: 'absolute', left: '68px', top: '-5rem', bottom: '28px', borderLeft: '2px dashed #9ca3af', zIndex: 0 }}></div>
             <div className="side-dash mobile-hide" style={{ position: 'absolute', right: '68px', top: '-5rem', bottom: '28px', borderRight: '2px dashed #9ca3af', zIndex: 0 }}></div>
@@ -123,17 +120,20 @@ const Impact = () => {
               {rows.map((row, i) => (
                 <div key={i} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '2.5rem', alignItems: 'center' }} className="chart-row">
                   
-                  {/* Left Column Data */}
-                  <div style={{ flex: 1, display: 'flex', alignItems: 'center', gap: '1.5rem', paddingRight: '2.5rem' }} className="col-left">
+                  {/* Left Column Data (Just Circle) */}
+                  <div style={{ display: 'flex', alignItems: 'center' }} className="col-left">
                     <div className="val-circle" style={{ width: '56px', height: '56px', borderRadius: '50%', backgroundColor: '#5a6577', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '1.15rem', flexShrink: 0, boxShadow: '0 4px 15px rgba(90, 101, 119, 0.3)', position: 'relative', zIndex: 2 }}>
                       {row.valLeft}
                     </div>
-                    <span style={{ fontSize: '1.25rem', color: '#4b5563', fontWeight: 600 }}>{row.labelLeft}</span>
                   </div>
                   
-                  {/* Right Column Data */}
-                  <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '1.5rem', paddingLeft: '2.5rem' }} className="col-right">
-                    <span style={{ fontSize: '1.25rem', color: '#4b5563', fontWeight: 600, textAlign: 'right' }}>{row.labelRight}</span>
+                  {/* Center Label */}
+                  <div style={{ flex: 1, textAlign: 'center', zIndex: 3 }} className="center-label">
+                    <span style={{ fontSize: '1.25rem', color: '#4b5563', fontWeight: 600, backgroundColor: 'rgba(255,255,255,0.95)', padding: '0.4rem 1.5rem', borderRadius: '100px', boxShadow: '0 2px 8px rgba(0,0,0,0.05)' }}>{row.labelLeft}</span>
+                  </div>
+
+                  {/* Right Column Data (Just Circle) */}
+                  <div style={{ display: 'flex', alignItems: 'center' }} className="col-right">
                     <div className="val-circle" style={{ width: '56px', height: '56px', borderRadius: '50%', backgroundColor: 'var(--color-orange)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '1.15rem', flexShrink: 0, boxShadow: '0 4px 15px rgba(243, 159, 28, 0.5)', position: 'relative', zIndex: 2 }}>
                       {row.valRight}
                     </div>
@@ -148,7 +148,7 @@ const Impact = () => {
           <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center', borderTop: '1px solid rgba(0,0,0,0.05)', paddingTop: '2.5rem' }}>
             <p style={{ fontSize: '1rem', color: 'var(--color-navy)', fontWeight: 600, margin: 0, fontStyle: 'italic' }}>
               {language === 'tr' ? '*Tanımlı satış süreci kullanan şirketler %28 daha fazla gelir elde eder.' : '*Companies using a defined sales process see a 28% increase in revenue.'}<br/>
-              <span style={{ fontWeight: 400, color: 'var(--color-gray)' }}>Harvard Business Review - Sales Process Research</span>
+              <a href="https://hbr.org/2015/01/companies-with-a-formal-sales-process-generate-more-revenue?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 400, color: 'var(--color-gray)', textDecoration: 'underline', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--color-orange)'} onMouseOut={(e) => e.target.style.color = 'var(--color-gray)'}>Harvard Business Review - Sales Process Research</a>
             </p>
           </div>
 
@@ -159,8 +159,8 @@ const Impact = () => {
           <div style={{ width: '60px', height: '4px', backgroundColor: 'var(--color-orange)', margin: '0 auto 2rem', borderRadius: '4px' }}></div>
           <p style={{ fontSize: '1.8rem', color: 'var(--color-navy)', fontWeight: 600, lineHeight: 1.5, letterSpacing: '-0.5px' }} className="conclusion-text">
             {language === 'tr' 
-              ? <>LetsSellApp, bu sürecin <span style={{ color: 'var(--color-orange)', position: 'relative' }}>uçtan uca izlenmesini, ölçülmesini</span> ve sürekli geliştirilmesini sağlar.</>
-              : <>LetsSellApp enables <span style={{ color: 'var(--color-orange)' }}>end-to-end monitoring, measurement</span>, and continuous improvement of this process.</>
+              ? <>LetsSellApp, bu sürecin <span style={{ color: 'var(--color-orange)', position: 'relative' }}>uçtan uca izlenmesini, ölçülmesini</span> ve <span style={{ color: 'var(--color-orange)' }}>sürekli geliştirilmesini</span> sağlar.</>
+              : <>LetsSellApp enables <span style={{ color: 'var(--color-orange)' }}>end-to-end monitoring, measurement</span>, and <span style={{ color: 'var(--color-orange)' }}>continuous improvement</span> of this process.</>
             }
           </p>
         </div>
@@ -235,7 +235,7 @@ const Impact = () => {
                 { val: '15%', labelTr: 'Satış Artışı', labelEn: 'Sales Increase' },
                 { val: '80%', labelTr: 'Kampanyalı Ürün Teklifi', labelEn: 'Campaign Product Offer' },
                 { val: '50%', labelTr: 'Eğitim Süresinin Yönetimi', labelEn: 'Training Time Management' },
-                { val: '40%', labelTr: 'Tanıtım Tamamlama', labelEn: 'Pitch Completion' }
+                { val: '40%', labelTr: 'Tanıtım Verimliliği', labelEn: 'Promotional Efficiency' }
               ].map((stat, idx) => (
                 <div key={idx} style={{ 
                   backgroundColor: 'rgba(255,255,255,0.05)', 
@@ -316,24 +316,23 @@ const Impact = () => {
               border-width: 2px !important; margin-right: 0.75rem !important; box-shadow: none !important;
               display: flex !important;
             }
-            .header-icon-box svg { width: 16px !important; height: 16px !important; }
+            .header-icon-box svg, .header-icon-box img { width: 16px !important; height: 16px !important; object-fit: contain !important; }
             .header-text-box { padding: 0 !important; text-align: left !important; }
             .header-label-text { font-size: 0.95rem !important; }
 
             .chart-row { 
-              flex-direction: column !important; gap: 1rem !important; 
-              align-items: stretch !important; border-bottom: 1px solid #eee; 
+              flex-direction: row !important; flex-wrap: wrap !important; gap: 1rem !important; 
+              justify-content: space-between !important; border-bottom: 1px solid #eee; 
               padding-bottom: 1.5rem !important; margin-bottom: 1.5rem !important; 
             }
             .chart-row:last-child { border-bottom: none; }
+            .center-label { width: 100% !important; order: -1 !important; margin-bottom: 0.5rem !important; }
+            .center-label span { font-size: 1.1rem !important; display: inline-block; }
             .col-left, .col-right { 
-              padding: 0 !important; justify-content: flex-start !important; 
-              flex-direction: row !important; gap: 1rem !important; 
+              padding: 0 !important; justify-content: center !important; flex: 1 !important;
+              flex-direction: row !important; gap: 0 !important; 
             }
-            .col-right { justify-content: flex-start !important; flex-direction: row-reverse !important; }
-            .col-right span { text-align: left !important; }
             .val-circle { width: 44px !important; height: 44px !important; font-size: 0.95rem !important; }
-            .col-left span, .col-right span { font-size: 1rem !important; line-height: 1.3; }
             
             .rows-padding { padding: 0 !important; }
             .side-dash, .center-dash { display: none !important; }

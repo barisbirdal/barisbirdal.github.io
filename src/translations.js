@@ -19,7 +19,7 @@ export const translations = {
       title2: "geliri artırın.",
       subtitle: "LetsSellApp satış görüşmelerini ölçülebilir hale getirir ve satış performansını geliştirmek için gerçek içgörüler sunar.",
       demoCta: "Demo Talep Et",
-      pilotCta: "Pilot Başlat"
+      pilotCta: "DEMO"
     },
     problem: {
       title: "Çoğu şirket satış sonuçlarını görür. Ancak satışın nasıl gerçekleştiğini bilmez.",
@@ -53,7 +53,8 @@ export const translations = {
       field: "Saha satış ekipleri",
       call: "Çağrı merkezi satış ekipleri",
       promo: "Tanıtım ekipleri",
-      contactCta: "Sektörünüzde ve şirketinizde LetsSellApp’in nasıl çalışacağını görmek için bizimle iletişime geçin."
+      contactCta: "Sektörünüzde ve şirketinizde LetsSellApp’in nasıl çalışacağını görmek için bizimle iletişime geçin.",
+      contactBtn: "Bize Ulaşın"
     },
     managerInsights: {
       sub: "Yöneticiler Ne Görür?",
@@ -111,7 +112,7 @@ export const translations = {
       title2: "Grow revenue.",
       subtitle: "LetsSellApp makes sales conversations measurable and provides real insights to improve sales performance.",
       demoCta: "Request Demo",
-      pilotCta: "Start Pilot"
+      pilotCta: "DEMO"
     },
     problem: {
       title: "Most companies see sales results. Few understand how sales actually happen.",
@@ -145,7 +146,8 @@ export const translations = {
       field: "Field sales teams",
       call: "Call center sales teams",
       promo: "Promoter teams",
-      contactCta: "Contact us to see how LetsSellApp works in your sector and company."
+      contactCta: "Contact us to see how LetsSellApp works in your sector and company.",
+      contactBtn: "Contact Us"
     },
     managerInsights: {
       sub: "What Managers See",
