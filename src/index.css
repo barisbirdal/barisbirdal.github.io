@@ -241,3 +241,11 @@ section {
   
   .container { padding: 0 1.25rem !important; }
 }
+
+/* Hide video controls three-dots menu (Chrome/Safari) */
+video::-internal-media-controls-overflow-button {
+  display: none !important;
+}
+video::-webkit-media-controls-overlay-play-button {
+  display: none !important;
+}

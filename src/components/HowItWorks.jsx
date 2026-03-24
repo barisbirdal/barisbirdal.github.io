@@ -78,7 +78,7 @@ const HowItWorks = () => {
               <video 
                 src="/tanitim_video.mp4" 
                 controls 
-                controlsList="nodownload"
+                controlsList="nodownload noplaybackrate"
                 disablePictureInPicture
                 autoPlay 
                 style={{ width: '100%', height: '100%', objectFit: 'cover', outline: 'none' }}
