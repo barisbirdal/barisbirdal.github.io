@@ -122,6 +122,7 @@ const Impact = () => {
                   
                   {/* Left Column Data (Just Circle) */}
                   <div style={{ display: 'flex', alignItems: 'center' }} className="col-left">
+                    <span className="mobile-col-label">{language === 'tr' ? 'Öncesi' : 'Before'}</span>
                     <div className="val-circle" style={{ width: '56px', height: '56px', borderRadius: '50%', backgroundColor: '#5a6577', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '1.15rem', flexShrink: 0, boxShadow: '0 4px 15px rgba(90, 101, 119, 0.3)', position: 'relative', zIndex: 2 }}>
                       {row.valLeft}
                     </div>
@@ -134,6 +135,7 @@ const Impact = () => {
 
                   {/* Right Column Data (Just Circle) */}
                   <div style={{ display: 'flex', alignItems: 'center' }} className="col-right">
+                    <span className="mobile-col-label" style={{ color: 'var(--color-orange)' }}>{language === 'tr' ? 'Sonrası' : 'After'}</span>
                     <div className="val-circle" style={{ width: '56px', height: '56px', borderRadius: '50%', backgroundColor: 'var(--color-orange)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '1.15rem', flexShrink: 0, boxShadow: '0 4px 15px rgba(243, 159, 28, 0.5)', position: 'relative', zIndex: 2 }}>
                       {row.valRight}
                     </div>
@@ -298,40 +300,28 @@ const Impact = () => {
         </div>
 
         <style dangerouslySetInnerHTML={{ __html: `
+          .mobile-col-label { display: none; }
           @media (max-width: 768px) {
             .impact-section { padding: 4rem 0 !important; }
             .impact-title { font-size: 2rem !important; margin-bottom: 3rem !important; }
             .impact-chart-glass { padding: 2.5rem 1.25rem !important; border-radius: 16px !important; }
             
-            .impact-chart-headers { height: auto !important; margin-bottom: 2rem !important; padding: 0 !important; }
-            .headers-container { display: flex !important; flex-direction: column !important; gap: 0.75rem !important; height: auto !important; }
-            .header-group-left, .header-group-right { 
-              position: relative !important; width: 100% !important; height: 60px !important; 
-              border-radius: 12px !important; overflow: hidden;
-            }
-            .ribbon-left, .ribbon-right { clip-path: none !important; }
-            .header-node-content { padding: 0 1rem !important; }
-            .header-icon-box { 
-              position: static !important; width: 32px !important; height: 32px !important; 
-              border-width: 2px !important; margin-right: 0.75rem !important; box-shadow: none !important;
-              display: flex !important;
-            }
-            .header-icon-box svg, .header-icon-box img { width: 16px !important; height: 16px !important; object-fit: contain !important; }
-            .header-text-box { padding: 0 !important; text-align: left !important; }
-            .header-label-text { font-size: 0.95rem !important; }
+            .impact-chart-headers { display: none !important; }
 
             .chart-row { 
-              flex-direction: row !important; flex-wrap: wrap !important; gap: 1rem !important; 
-              justify-content: space-between !important; border-bottom: 1px solid #eee; 
-              padding-bottom: 1.5rem !important; margin-bottom: 1.5rem !important; 
+              flex-direction: column !important; gap: 0.5rem !important; 
+              align-items: stretch !important; border-bottom: 2px dashed #eee; 
+              padding-bottom: 2.5rem !important; margin-bottom: 2.5rem !important; 
             }
             .chart-row:last-child { border-bottom: none; }
-            .center-label { width: 100% !important; order: -1 !important; margin-bottom: 0.5rem !important; }
+            .center-label { width: 100% !important; margin-bottom: 1.5rem !important; }
             .center-label span { font-size: 1.1rem !important; display: inline-block; }
             .col-left, .col-right { 
-              padding: 0 !important; justify-content: center !important; flex: 1 !important;
-              flex-direction: row !important; gap: 0 !important; 
+              width: 100% !important; justify-content: space-between !important; 
+              padding: 0 1rem !important; flex: none !important;
+              display: flex !important; flex-direction: row !important;
             }
+            .mobile-col-label { display: block !important; font-weight: 700; font-size: 1.1rem; color: #a1a1aa; }
             .val-circle { width: 44px !important; height: 44px !important; font-size: 0.95rem !important; }
             
             .rows-padding { padding: 0 !important; }
@@ -343,7 +333,7 @@ const Impact = () => {
             
             .proof-card { padding: 3rem 1.25rem !important; gap: 3rem !important; border-radius: 16px !important; }
             .proof-badge { top: 1.5rem !important; left: 1.25rem !important; }
-            .proof-logo-container { padding: 1rem 1.75rem !important; margin-bottom: 2rem !important; border-radius: 16px !important; }
+            .proof-logo-container { margin-top: 2rem !important; padding: 1rem 1.75rem !important; margin-bottom: 2rem !important; border-radius: 16px !important; }
             .proof-logo-container img { height: 100px !important; }
             .proof-title { font-size: 2.25rem !important; }
             .proof-subtitle { font-size: 1.1rem !important; }
