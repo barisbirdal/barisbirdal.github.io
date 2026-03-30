@@ -13,6 +13,8 @@ import Footer from './components/Footer';
 import Kvkk from './components/Kvkk';
 import ExplicitConsent from './components/ExplicitConsent';
 import CookiePolicy from './components/CookiePolicy';
+import Blog from './components/Blog';
+import About from './components/About';
 import ScrollToTop from './components/ScrollToTop';
 import { LanguageProvider } from './context/LanguageContext';
 import './index.css';
@@ -40,6 +42,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/about" element={<About />} />
               <Route path="/kvkk" element={<Kvkk />} />
               <Route path="/acik-riza" element={<ExplicitConsent />} />
               <Route path="/cerez-politikasi" element={<CookiePolicy />} />

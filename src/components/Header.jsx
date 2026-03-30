@@ -93,9 +93,9 @@ const Header = () => {
           {/* Mobile Language Toggle */}
           <div className="mobile-show" style={{ display: 'none', marginBottom: '1rem' }} onClick={toggleLanguage}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', fontWeight: 700, color: 'var(--color-navy)', cursor: 'pointer' }}>
-              <span style={{ color: language === 'tr' ? 'var(--color-navy)' : 'var(--color-gray-light)', opacity: language === 'tr' ? 1 : 0.6 }}>TR</span>
-              <span style={{ color: 'var(--color-gray-light)', fontWeight: 400 }}>|</span>
-              <span style={{ color: language === 'en' ? 'var(--color-navy)' : 'var(--color-gray-light)', opacity: language === 'en' ? 1 : 0.6 }}>EN</span>
+              <span style={{ color: language === 'tr' ? 'var(--color-navy)' : '#64748b', opacity: 1 }}>TR</span>
+              <span style={{ color: '#cbd5e1', fontWeight: 400 }}>|</span>
+              <span style={{ color: language === 'en' ? 'var(--color-navy)' : '#64748b', opacity: 1 }}>EN</span>
             </div>
           </div>
 
@@ -116,9 +116,9 @@ const Header = () => {
           </Link>
           
           <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.8rem', fontWeight: 700, color: 'var(--color-navy)', cursor: 'pointer' }} onClick={toggleLanguage}>
-            <span style={{ color: language === 'tr' ? 'var(--color-navy)' : 'var(--color-gray-light)', opacity: language === 'tr' ? 1 : 0.6 }}>TR</span>
-            <span style={{ color: 'var(--color-gray-light)', fontWeight: 400 }}>|</span>
-            <span style={{ color: language === 'en' ? 'var(--color-navy)' : 'var(--color-gray-light)', opacity: language === 'en' ? 1 : 0.6 }}>EN</span>
+            <span style={{ color: language === 'tr' ? 'var(--color-navy)' : '#64748b', opacity: 1 }}>TR</span>
+            <span style={{ color: '#cbd5e1', fontWeight: 400 }}>|</span>
+            <span style={{ color: language === 'en' ? 'var(--color-navy)' : '#64748b', opacity: 1 }}>EN</span>
           </div>
 
           <div style={{ width: '1px', height: '24px', backgroundColor: '#e2e8f0' }}></div>

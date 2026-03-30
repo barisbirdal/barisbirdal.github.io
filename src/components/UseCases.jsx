@@ -48,7 +48,9 @@ const UseCases = () => {
               }}>
                 {c.icon}
               </div>
-              <h3 style={{ fontSize: '1.35rem', color: 'var(--color-white)', margin: 0, fontWeight: 600 }}>{c.title}</h3>
+              <h3 style={{ fontSize: '1.15rem', color: 'var(--color-white)', margin: 0, fontWeight: 600, lineHeight: 1.4, whiteSpace: 'nowrap' }}>
+                {c.title}
+              </h3>
             </div>
           ))}
         </div>

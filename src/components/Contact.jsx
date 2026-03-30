@@ -78,6 +78,58 @@ const Contact = () => {
         </div>
       </div>
 
+      {/* Contact Form */}
+      <div className="container contact-form-container" style={{ paddingBottom: '6rem', maxWidth: '850px', margin: '0 auto' }}>
+        <h2 style={{ textAlign: 'center', fontSize: '2.5rem', color: 'var(--color-navy)', marginBottom: '3rem', fontWeight: 600 }}>
+          {language === 'tr' ? 'Sorularınızı Bize İletin!' : 'Send Us Your Questions!'}
+        </h2>
+        
+        <form style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }} onSubmit={(e) => e.preventDefault()}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }} className="form-row">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <label style={{ fontSize: '1.05rem', color: '#475569', fontWeight: 500 }}>
+                {language === 'tr' ? 'Adınız' : 'Your Name'}
+              </label>
+              <input type="text" placeholder={language === 'tr' ? 'Adınız' : 'Your Name'} style={{ padding: '1rem', borderRadius: '8px', border: '1px solid #edf2f7', fontSize: '1rem', color: '#1e293b', outline: 'none', transition: 'border-color 0.2s', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }} onFocus={(e) => e.target.style.borderColor = 'var(--color-navy)'} onBlur={(e) => e.target.style.borderColor = '#edf2f7'} required />
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <label style={{ fontSize: '1.05rem', color: '#475569', fontWeight: 500 }}>
+                {language === 'tr' ? 'Firma Adı' : 'Company Name'}
+              </label>
+              <input type="text" placeholder={language === 'tr' ? 'Firma Adı' : 'Company Name'} style={{ padding: '1rem', borderRadius: '8px', border: '1px solid #edf2f7', fontSize: '1rem', color: '#1e293b', outline: 'none', transition: 'border-color 0.2s', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }} onFocus={(e) => e.target.style.borderColor = 'var(--color-navy)'} onBlur={(e) => e.target.style.borderColor = '#edf2f7'} required />
+            </div>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }} className="form-row">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <label style={{ fontSize: '1.05rem', color: '#475569', fontWeight: 500 }}>
+                {language === 'tr' ? 'Email Adresiniz' : 'Email Address'}
+              </label>
+              <input type="email" placeholder={language === 'tr' ? 'Email Adresiniz' : 'Email Address'} style={{ padding: '1rem', borderRadius: '8px', border: '1px solid #edf2f7', fontSize: '1rem', color: '#1e293b', outline: 'none', transition: 'border-color 0.2s', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }} onFocus={(e) => e.target.style.borderColor = 'var(--color-navy)'} onBlur={(e) => e.target.style.borderColor = '#edf2f7'} required />
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <label style={{ fontSize: '1.05rem', color: '#475569', fontWeight: 500 }}>
+                {language === 'tr' ? 'Telefon Numaranız' : 'Phone Number'}
+              </label>
+              <input type="tel" placeholder={language === 'tr' ? 'Telefon Numaranız' : 'Phone Number'} style={{ padding: '1rem', borderRadius: '8px', border: '1px solid #edf2f7', fontSize: '1rem', color: '#1e293b', outline: 'none', transition: 'border-color 0.2s', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }} onFocus={(e) => e.target.style.borderColor = 'var(--color-navy)'} onBlur={(e) => e.target.style.borderColor = '#edf2f7'} required />
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <label style={{ fontSize: '1.05rem', color: '#475569', fontWeight: 500 }}>
+              {language === 'tr' ? 'Size nasıl yardımcı olabiliriz?' : 'How can we help you?'}
+            </label>
+            <textarea placeholder="..." rows="6" style={{ padding: '1rem', borderRadius: '8px', border: '1px solid #edf2f7', fontSize: '1rem', color: '#1e293b', outline: 'none', transition: 'border-color 0.2s', resize: 'vertical', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }} onFocus={(e) => e.target.style.borderColor = 'var(--color-navy)'} onBlur={(e) => e.target.style.borderColor = '#edf2f7'} required></textarea>
+          </div>
+
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
+            <button type="submit" className="btn btn-hover-grow" style={{ backgroundColor: '#7d75a6', color: 'white', padding: '1rem 3rem', borderRadius: '8px', fontSize: '1.1rem', fontWeight: 600, border: 'none', cursor: 'pointer', transition: 'all 0.2s', boxShadow: '0 4px 14px rgba(125, 117, 166, 0.4)' }}>
+              {language === 'tr' ? 'Mesaj Gönder' : 'Send Message'}
+            </button>
+          </div>
+        </form>
+      </div>
+
       {/* Company Information Table */}
       <div className="container contact-info-container" style={{ paddingBottom: '4rem' }}>
         <div style={{
@@ -142,6 +194,7 @@ const Contact = () => {
             .info-header { padding: 1.5rem !important; }
             .info-body { padding: 0 1.5rem !important; }
             .info-row { padding: 1.5rem 0 !important; }
+            .form-row { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
           }
         `}} />
       </div>

@@ -40,15 +40,9 @@ const Footer = () => {
 
           {/* Column 2: Navigation */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', paddingTop: '1.5rem', minWidth: '140px' }} className="footer-col">
-            <a href="/#how-it-works" style={{ color: '#475569', fontSize: '0.95rem', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--color-navy)'} onMouseOut={(e) => e.target.style.color = '#475569'}>{language === 'tr' ? 'Yeni Nesil Satış' : 'Next-Gen Sales'}</a>
-            <a href="/#features" style={{ color: '#475569', fontSize: '0.95rem', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--color-navy)'} onMouseOut={(e) => e.target.style.color = '#475569'}>{language === 'tr' ? 'Özellikler' : 'Features'}</a>
-            <a href="/#about" style={{ color: '#475569', fontSize: '0.95rem', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--color-navy)'} onMouseOut={(e) => e.target.style.color = '#475569'}>{language === 'tr' ? 'Hakkımızda' : 'About Us'}</a>
-          </div>
-
-          {/* Column 3: Navigation */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', paddingTop: '1.5rem', minWidth: '140px' }} className="footer-col">
-            <a href="https://letssell.app/blog" target="_blank" rel="noreferrer" style={{ color: '#475569', fontSize: '0.95rem', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--color-navy)'} onMouseOut={(e) => e.target.style.color = '#475569'}>Blog</a>
-            <a href="/contact" style={{ color: '#475569', fontSize: '0.95rem', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--color-navy)'} onMouseOut={(e) => e.target.style.color = '#475569'}>{t('contact')}</a>
+            <Link to="/about" style={{ color: '#475569', fontSize: '0.95rem', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--color-navy)'} onMouseOut={(e) => e.target.style.color = '#475569'}>{language === 'tr' ? 'Hakkımızda' : 'About Us'}</Link>
+            <Link to="/blog" style={{ color: '#475569', fontSize: '0.95rem', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--color-navy)'} onMouseOut={(e) => e.target.style.color = '#475569'}>Blog</Link>
+            <Link to="/contact" style={{ color: '#475569', fontSize: '0.95rem', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--color-navy)'} onMouseOut={(e) => e.target.style.color = '#475569'}>{t('contact')}</Link>
             <a href="https://dash.letssell.app/login" target="_blank" rel="noreferrer" style={{ color: '#475569', fontSize: '0.95rem', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--color-navy)'} onMouseOut={(e) => e.target.style.color = '#475569'}>Dashboard</a>
           </div>
 
