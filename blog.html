@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - LetsLead</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo-link"><img src="logo.png" alt="LetsLead" class="logo-img"></a>
+            <button id="hamburger-btn" class="hamburger-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+            <nav id="main-nav">
+                <a href="about.html" class="nav-link" data-i18n="header.about">Hakkımızda</a>
+                <a href="index.html#how-it-works" class="nav-link" data-i18n="header.howItWorks">Nasıl Çalışır?</a>
+                <a href="contact.html" class="nav-link" data-i18n="footer.contact">İletişim</a>
+                <div class="mobile-show" style="display: none; margin-bottom: 1rem;" id="mobile-lang-toggle">
+                    <div style="display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; font-weight: 700; color: var(--color-navy); cursor: pointer;">
+                        <span class="lang-tr">TR</span> <span class="lang-sep">|</span> <span class="lang-en inactive">EN</span>
+                    </div>
+                </div>
+            </nav>
+            <div class="mobile-hide header-actions">
+                <a href="contact.html" class="btn btn-primary btn-hover-grow" data-i18n="header.demo">Demo Talep Et</a>
+                <div class="lang-toggle">
+                    <span class="lang-tr">TR</span> <span class="lang-sep">|</span> <span class="lang-en inactive">EN</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="blog-page" style="backgroundColor: #fcfcfc; minHeight: 80vh; paddingBottom: 5rem;">
+            <div class="blog-hero" style="background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(39, 66, 146, 0.88)), url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; padding: 10rem 2rem 6rem; textAlign: center; color: white; border-bottom-left-radius: 100px; border-bottom-right-radius: 100px; margin-bottom: 4rem; boxShadow: 0 20px 40px rgba(0,0,0,0.1);">
+                <h1 style="fontSize: 4rem; marginBottom: 1.5rem; fontWeight: 800; letterSpacing: -1px;">Blog</h1>
+                <p style="fontSize: 1.25rem; maxWidth: 800px; margin: 0 auto; lineHeight: 1.6; opacity: 0.9;" id="blog-hero-desc">
+                    Liderlik dünyasından en güncel haberler, ipuçları ve içgörüler.
+                </p>
+            </div>
+
+            <div class="container" style="maxWidth: 1200px; margin: 0 auto; padding: 0 2rem;">
+                <div id="blog-posts-container" class="blog-grid" style="display: grid; gridTemplateColumns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2.5rem;">
+                    <!-- Posts will be injected here -->
+                    <div style="text-align: center; grid-column: 1/-1; padding: 4rem 0;">
+                        <p id="loading-text" style="fontSize: 1.25rem; color: var(--color-navy);">Yükleniyor...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="backgroundColor: #ffffff; padding: 4rem 0 2rem; borderTop: 1px solid #e2e8f0;">
+        <div class="container" style="textAlign: center; fontWeight: 600;">
+            <a href="https://hadisatalim.biz/" target="_blank" style="color: #f39f1c; text-decoration: none;">Hadisatalim.biz</a> &copy; 2020 - 2026
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="main.js"></script>
+    <script>
+        async function fetchBlogPosts() {
+            const lang = localStorage.getItem('language') || 'tr';
+            const langCode = lang === 'tr' ? 1 : 2;
+            const container = document.getElementById('blog-posts-container');
+            const loadingText = document.getElementById('loading-text');
+            const heroDesc = document.getElementById('blog-hero-desc');
+
+            loadingText.innerText = lang === 'tr' ? 'Yükleniyor...' : 'Loading...';
+            heroDesc.innerText = lang === 'tr' ? 'Liderlik dünyasından en güncel haberler, ipuçları ve içgörüler.' : 'The latest news, tips, and insights from the leadership world.';
+
+            try {
+                const response = await fetch('/api/Blog/GetBlogPosts?language=' + langCode, { method: 'POST' });
+                if (response.ok) {
+                    const posts = await response.json();
+                    container.innerHTML = '';
+                    if (posts.length === 0) {
+                        container.innerHTML = `<p style="text-align: center; grid-column: 1/-1;">${lang === 'tr' ? 'Henüz blog yazısı bulunmuyor.' : 'No blog posts yet.'}</p>`;
+                        return;
+                    }
+                    posts.forEach(post => {
+                        const perma = lang === 'tr' ? (post.permaLinkTr || post.permaLinkEn) : (post.permaLinkEn || post.permaLinkTr);
+                        const title = lang === 'tr' ? (post.titleTr || post.titleEn) : (post.titleEn || post.titleTr);
+                        const rawContent = lang === 'tr' ? (post.contentTr || post.contentEn) : (post.contentEn || post.contentTr);
+                        const cleanContent = rawContent ? rawContent.replace(/<[^>]+>/g, '') : '';
+                        const brief = cleanContent.length > 120 ? cleanContent.substring(0, 120) + '...' : cleanContent;
+                        const imageUrl = post.imageUrl || 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80';
+                        const author = post.user && post.user.firstName ? `${post.user.firstName} ${post.user.lastName}` : '';
+                        const readMoreText = lang === 'tr' ? 'Devamını Oku →' : 'Read More →';
+
+                        container.innerHTML += `
+                            <a href="post.html?perma=${perma}" style="text-decoration: none;">
+                                <div class="blog-card" style="backgroundColor: white; borderRadius: 16px; overflow: hidden; boxShadow: 0 10px 30px rgba(0,0,0,0.04); transition: transform 0.3s ease, boxShadow 0.3s ease; height: 100%; display: flex; flexDirection: column;">
+                                    <div style="height: 240px; backgroundImage: url(${imageUrl}); backgroundSize: cover; backgroundPosition: center;"></div>
+                                    <div style="padding: 2rem; display: flex; flexDirection: column; flex: 1;">
+                                        <p style="color: var(--color-navy); opacity: 0.6; fontSize: 0.9rem; marginBottom: 1rem; fontWeight: 600;">${post.category ? post.category.name : ''}</p>
+                                        <h3 style="fontSize: 1.4rem; color: var(--color-navy); marginBottom: 1rem; fontWeight: 700; lineHeight: 1.4;">${title}</h3>
+                                        <p style="color: var(--color-gray); lineHeight: 1.6; marginBottom: 1.5rem; flex: 1;">${brief}</p>
+                                        <div style="display: flex; justifyContent: space-between; alignItems: center; marginTop: auto; paddingTop: 1rem; borderTop: 1px solid rgba(0,0,0,0.05);">
+                                            <span style="color: var(--color-navy); fontSize: 0.9rem; fontWeight: 500;">${author}</span>
+                                            <span style="color: var(--color-blue); fontSize: 0.9rem; fontWeight: 600;">${readMoreText}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        `;
+                    });
+                }
+            } catch (err) {
+                console.error(err);
+                container.innerHTML = `<p style="text-align: center; grid-column: 1/-1; color: red;">${lang === 'tr' ? 'Bir hata oluştu.' : 'An error occurred.'}</p>`;
+            }
+        }
+        window.addEventListener('languageChanged', fetchBlogPosts);
+        fetchBlogPosts();
+    </script>
+</body>
+</html>
