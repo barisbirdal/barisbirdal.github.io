@@ -515,3 +515,61 @@ video::-webkit-media-controls-overlay-play-button { display: none !important; }
     scroll-snap-align: center;
   }
 }
+
+@media (max-width: 768px) {
+  /* Fix Background Images Not Showing on Mobile */
+  section {
+    background-attachment: scroll !important;
+  }
+  
+  /* Fix Impact Chart Overlap on Mobile */
+  .impact-chart-glass {
+    padding: 2.5rem 1.5rem !important;
+  }
+  
+  .impact-header-row {
+    padding: 0 !important;
+    height: auto !important;
+    margin-bottom: 3rem !important;
+  }
+  
+  .impact-header-row > div {
+    flex-direction: column !important;
+    gap: 15px;
+  }
+  
+  .impact-shape-left, .impact-shape-right {
+    clip-path: none !important;
+    border-radius: 12px !important;
+    padding: 12px 20px !important;
+    font-size: 1.15rem !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  
+  .impact-stats-container {
+    padding: 0 !important;
+  }
+  
+  .impact-stat-row {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    margin-bottom: 3rem !important;
+  }
+  
+  .impact-stat-label {
+    order: -1 !important; /* Move text above circles */
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 1.15rem !important;
+    padding: 0.6rem 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .impact-circle {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 1.1rem !important;
+  }
+}
