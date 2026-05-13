@@ -23,8 +23,8 @@ const translations = {
       subtitle: "",
       desc: "",
       q1: "Lider ekip ile konuşmasını nasıl yürüttü?",
-      q2: "Hangi liderlik adımları uygulandı?",
-      q3: "Hangi davranışlar eksik kaldı?",
+      q2: "Görüşmede hangi adımlar takip edildi?",
+      q3: "Hangi Liderlik becerileri sergilendi?",
       q4: "Görüşme nerede etkisini kaybetti?"
     },
     howItWorks: {
@@ -32,11 +32,11 @@ const translations = {
       title: "Liderlik görüşmelerini ölçülebilir hale getirin.",
       desc: "LetsLead liderlik görüşmelerini analiz ederek liderlik sürecini görünür hale getirir.",
       watchVideo: "Tanıtım Videosunu İzle",
-      s1Title: "Görüşme gerçekleşir",
+      s1Title: "Yönetici – çalışan görüşmesi gerçekleşir",
       s1Desc: "",
       s2Title: "Görüşme analiz edilir",
       s2Desc: "",
-      s3Title: "Performans ölçülür",
+      s3Title: "Değerlendirme yapılır",
       s3Desc: "",
       s4Title: "Yöneticiler içgörü elde eder",
       s4Desc: ""
@@ -50,19 +50,19 @@ const translations = {
       field: "Ekip yöneten tüm liderler",
       call: "Uzaktan ve hibrit ekip yapıları",
       promo: "Performans ve gelişim odaklı organizasyonlar",
-      contactCta: "Liderlik konuşmalarınızı yönetmek için bizimle iletişime geçin.",
+      contactCta: "Liderlik görüşmelerinizi yönetmek için bizimle iletişime geçin.",
       contactBtn: "Bize Ulaşın"
     },
     brandPromises: {
       sub: 'Temel Marka Vaatleri',
       title: 'LetsLead markası üç temel vaatte bulunur:',
       p1Title: 'Görünürlük',
-      p1Desc: 'Liderlik konuşmalarının nasıl gerçekleştiğini görünür hale getirir.',
+      p1Desc: 'Liderlik görüşmelerinin nasıl gerçekleştiğini görünür hale getirir.',
       p2Title: 'Ölçüm',
       p2Desc: 'Liderlik sürecini ve eğitimlerin verimliliğini adım adım ölçer ve analiz eder.',
       p3Title: 'Gelişim',
       p3Desc: 'Liderlerin ve ekiplerin performansını sistematik olarak geliştirmeye yardımcı olur.',
-      contactCta: 'Liderlik konuşmalarınızı yönetmek için bizimle iletişime geçin.',
+      contactCta: 'Liderlik görüşmelerinizi yönetmek için bizimle iletişime geçin.',
       contactBtn: 'Bize Ulaşın'
     },
     stats: {
@@ -84,12 +84,12 @@ const translations = {
       title: "LetsLead yöneticilerin;",
       desc: "liderlik sürecini görmesini, liderler arası performans farklarını anlamasını, liderleri geliştirmesini, takım üyelerine doğru girdinin sağlanmasını ve alınan eğitimlerin iş üzerinde uygulanma verimliliğini takip etmesini sağlar.",
       f1: "Süreç uyumu",
-      f2: "Performans skoru",
-      f3: "Liderlik beceri boşlukları",
+      f2: "Değerlendirme skoru",
+      f3: "Liderlik yetkinlik boşlukları",
       f4: "Gelişim fırsatları"
     },
     downloadApp: {
-      title: "Liderlik konuşmalarınızı ölçmeye başlayın!",
+      title: "Liderlik görüşmelerinizi ölçmeye başlayın!",
       desc: "LetsLead deneyimini kesintisiz yaşayın."
     },
     impact: {
@@ -101,7 +101,7 @@ const translations = {
       m3: "Ekip Bağlılığı"
     },
     contact: {
-      title: "Liderlik konuşmalarınızı ölçmeye başlayın.",
+      title: "Liderlik görüşmelerinizi ölçmeye başlayın.",
       desc: "Bir pilot çalışma ile başlayın ve gerçek etkiyi ölçün.",
       name: "Adınız Soyadınız",
       email: "Kurumsal E-posta",
@@ -111,7 +111,7 @@ const translations = {
       send: "Pilot Çözüm İçin Başvur"
     },
     footer: {
-      desc: "Liderlik konuşmalarını ölçen ve analiz eden bir Leadership Conversation Intelligence platformudur.",
+      desc: "Liderlik görüşmelerini ölçen ve analiz eden bir Leadership Conversation Intelligence platformudur.",
       solution: "Çözüm",
       contact: "İletişim",
       consent: "Açık Rıza Metni",
@@ -156,8 +156,8 @@ const translations = {
       subtitle: "",
       desc: "",
       q1: "How did the leader conduct the conversation?",
-      q2: "Which leadership steps were applied?",
-      q3: "Which behaviors were missing?",
+      q2: "Which steps were followed in the conversation?",
+      q3: "Which leadership skills were demonstrated?",
       q4: "Where did the conversation lose impact?"
     },
     howItWorks: {
@@ -165,11 +165,11 @@ const translations = {
       title: "Make leadership conversations measurable.",
       desc: "LetsLead analyzes leadership conversations, making the leadership process visible.",
       watchVideo: "Watch Demo Video",
-      s1Title: "Conversation happens",
+      s1Title: "Manager-employee conversation happens",
       s1Desc: "",
       s2Title: "Conversation is analyzed",
       s2Desc: "",
-      s3Title: "Performance is measured",
+      s3Title: "Evaluation is made",
       s3Desc: "",
       s4Title: "Managers gain insights",
       s4Desc: ""
@@ -217,8 +217,8 @@ const translations = {
       title: "LetsLead enables managers to;",
       desc: "see the leadership process, understand performance gaps between leaders, develop them, provide the right input to team members, and track the effectiveness of applied training on the job.",
       f1: "Process compliance",
-      f2: "Performance score",
-      f3: "Skill gaps",
+      f2: "Evaluation score",
+      f3: "Leadership competency gaps",
       f4: "Improvement opportunities"
     },
     downloadApp: {
